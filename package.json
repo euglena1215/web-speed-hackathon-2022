@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "build:watch": "webpack --config webpack.dev.js --watch --progress",
-    "serve": "node --enable-source-maps dist/server.js",
+    "serve": "node dist/server.js",
     "serve:dev": "wait-on dist/server.js && NODE_OPTIONS=--enable-source-maps nodemon dist/server.js",
     "dev": "npm-run-all -s clean -p build:watch serve:dev",
     "clean": "rimraf dist",

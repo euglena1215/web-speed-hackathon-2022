@@ -6,6 +6,6 @@ module.exports = [
     mode: "production",
   }),
   merge(commonServer, {
-    mode: "production",
+    mode: "development", // TODO: production にするとエラーになったので後で直す
   })
 ];
