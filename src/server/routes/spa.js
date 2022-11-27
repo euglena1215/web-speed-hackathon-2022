@@ -1,6 +1,7 @@
 import { join } from "path";
 
 import compression from "@fastify/compress";
+// import modernImages from "fastify-modern-images";
 import fastifyStatic from "fastify-static";
 
 /**
@@ -12,6 +13,7 @@ export const spaRoute = async (fastify) => {
     root: join(__dirname, "public"),
     wildcard: false,
   });
+  // fastify.register(modernImages, { quality: 1 });
 
   fastify.get("/favicon.ico", () => {
     throw fastify.httpErrors.notFound();
