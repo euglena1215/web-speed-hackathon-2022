@@ -1,9 +1,11 @@
 import moment from "moment-timezone";
 import { Between, LessThanOrEqual, MoreThanOrEqual } from "typeorm";
+import zenginCode from "zengin-code";
 
 import { BettingTicket, Race, User } from "../../model/index.js";
 import { createConnection } from "../typeorm/connection.js";
 import { initialize } from "../typeorm/initialize.js";
+
 
 /**
  * @type {import('fastify').FastifyPluginCallback}
@@ -155,6 +157,10 @@ export const apiRoute = async (fastify) => {
     await userRepo.save(req.user);
 
     res.send(bettingTicket);
+  });
+
+  fastify.get("/zengin-code", async (req, res) => {
+    res.send(zenginCode);
   });
 
   fastify.post("/initialize", async (_req, res) => {
