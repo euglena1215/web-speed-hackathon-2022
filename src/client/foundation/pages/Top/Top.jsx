@@ -82,7 +82,7 @@ function useTodayRacesWithAnimation(races) {
  * @returns {string | null}
  */
 function useHeroImage(_todayRaces) {
-  return "/assets/images/hero.jpg";
+  return "/assets/images/hero.avif";
 }
 
 /** @type {React.VFC} */
