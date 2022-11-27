@@ -13,5 +13,15 @@ import React from "react";
 
 /** @type {React.VFC<Props>} */
 export const TrimmedImage = ({ height, src, width }) => {
-  return <img src={`${src}?width=${width}&height=${height}`} />;
+
+  if (width === 100 & height === 100) {
+    const url = src.replace('.jpg', '_100x100.avif')
+    return <img src={url} />;
+  }
+  if (width === 400 & height === 225) {
+    const url = src.replace('.jpg', '_400x225.avif')
+    return <img src={url} />;
+  }
+  
+  return <img src={src} />;
 };
