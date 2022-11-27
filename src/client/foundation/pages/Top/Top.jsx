@@ -81,20 +81,8 @@ function useTodayRacesWithAnimation(races) {
  * @param {Model.Race[]} todayRaces
  * @returns {string | null}
  */
-function useHeroImage(todayRaces) {
-  const firstRaceId = todayRaces[0]?.id;
-  const url =
-    firstRaceId !== undefined
-      ? `/api/hero?firstRaceId=${firstRaceId}`
-      : "/api/hero";
-  const { data } = useFetch(url, jsonFetcher);
-
-  if (firstRaceId === undefined || data === null) {
-    return null;
-  }
-
-  const imageUrl = `${data.url}?${data.hash}`;
-  return imageUrl;
+function useHeroImage(_todayRaces) {
+  return "/assets/images/hero.jpg";
 }
 
 /** @type {React.VFC} */
