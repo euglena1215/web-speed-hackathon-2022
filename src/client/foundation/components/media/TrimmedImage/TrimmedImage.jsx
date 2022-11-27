@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 /**
  * アスペクト比を維持したまま、要素のコンテンツボックス全体を埋めるように拡大縮小したサイズを返す
@@ -14,9 +13,10 @@ import styled from "styled-components";
 
 /** @type {React.VFC<Props>} */
 export const TrimmedImage = ({ height, src, width }) => {
-  return <Img src={src} width={width} height={height} />;
+  return <img src={src} style={{
+    objectFit: "cover",
+    width: width,
+    height: height,
+    aspectRatio: `${width} / ${height}`,
+  }} />;
 };
-
-const Img = styled.img`
-  object-fit: cover;
-`;
