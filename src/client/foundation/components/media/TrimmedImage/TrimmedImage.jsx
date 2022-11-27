@@ -13,10 +13,5 @@ import React from "react";
 
 /** @type {React.VFC<Props>} */
 export const TrimmedImage = ({ height, src, width }) => {
-  return <img src={src} style={{
-    objectFit: "cover",
-    width: width,
-    height: height,
-    aspectRatio: `${width} / ${height}`,
-  }} />;
+  return <img src={`${src}?width=${width}&height=${height}`} />;
 };
